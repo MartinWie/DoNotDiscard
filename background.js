@@ -32,6 +32,10 @@ function disableAutoDiscardForTab(tabId){
 }
 
 function shouldDiscardBeDisabled(tab){
-  let urlToDisable = 'troy'
-  return (tab.url.indexOf(urlToDisable) != -1)
+  let subString = 'troy'
+  return isSubStringInDomain(tab,subString)
+}
+
+function isSubStringInDomain(tab,subString){
+  return (tab.url.indexOf(subString) != -1)
 }
