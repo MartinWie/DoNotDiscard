@@ -1,15 +1,22 @@
 chrome.tabs.onCreated.addListener(function(tab) {
-  chrome.tabs.update(tab.id, {autoDiscardable: false});
+  if (tab.url.indexOf('troy') != -1){
+    chrome.tabs.update(tab.id, {autoDiscardable: false});
+  }
 });
 
 chrome.tabs.onReplaced.addListener(function(tabId) {
-  chrome.tabs.update(tabId, {autoDiscardable: false});
+  let tmpTab = chrome.tabs.get(tabId)
+  if (tmpTab.url.indexOf('troy') != -1){
+    chrome.tabs.update(tabId, {autoDiscardable: false});
+  }
 });
 
 chrome.runtime.onInstalled.addListener(function(details) {
   chrome.tabs.query({}, function(tabs) {
     tabs.forEach(function(tab) {
-      chrome.tabs.update(tab.id, {autoDiscardable: false});
+      if(tab.url.indexOf('troy') != -1){
+        chrome.tabs.update(tab.id, {autoDiscardable: false});
+      }
     });
   });
 });
