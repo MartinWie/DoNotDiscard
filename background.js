@@ -11,7 +11,7 @@ chrome.tabs.onReplaced.addListener(function(tabId) {
   }
 });
 
-chrome.tabs.onActivated.addListener(function(tab) {
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (tab.url.indexOf('troy') != -1){
     chrome.tabs.update(tab.id, {autoDiscardable: false});
   }
