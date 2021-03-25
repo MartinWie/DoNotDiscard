@@ -28,7 +28,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 });
 
 function disableAutoDiscardForTab(tabId){
-  chrome.tabs.update(tab.id, {autoDiscardable: false});
+  chrome.tabs.update(tabId, {autoDiscardable: false});
 }
 
 function shouldDiscardBeDisabled(tab){
