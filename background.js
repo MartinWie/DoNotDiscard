@@ -1,4 +1,4 @@
-chrome.tabs.onCreated.addListener(
+chrome.tabs.onCreated.addListener( tab =>
   discardManaging(tab)
 );
 
@@ -31,7 +31,7 @@ function disableAutoDiscardForTab(tabId){
 
 function shouldDiscardBeDisabled(tab){
   let doNotSuspends = ["troy", "music", "active"]
-  
+
   return isTabUrlInList(doNotSuspends,tab)
 }
 
