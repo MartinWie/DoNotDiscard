@@ -1,39 +1,44 @@
-chrome.tabs.onCreated.addListener(function(tab) {
-  if (shouldDiscardBeDisabled(tab)){
-    disableAutoDiscardForTab(tab.id);
-  }
-});
+chrome.tabs.onCreated.addListener(
+  discardManaging(tab)
+);
 
 chrome.tabs.onReplaced.addListener(function(tabId) {
-  let tmpTab = chrome.tabs.get(tabId)
-  if (shouldDiscardBeDisabled(tmpTab)){
-    disableAutoDiscardForTab(tabId);
-  }
+  let tab = chrome.tabs.get(tabId)
+  discardManaging(tab)
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  if (shouldDiscardBeDisabled(tab)){
-    disableAutoDiscardForTab(tabId);
-  }
+  discardManaging(tab)
 });
 
 chrome.runtime.onInstalled.addListener(function(details) {
   chrome.tabs.query({}, function(tabs) {
     tabs.forEach(function(tab) {
-      if(shouldDiscardBeDisabled(tab)){
-        disableAutoDiscardForTab(tab.id);
-      }
+      discardManaging(tab)
     });
   });
 });
+
+function discardManaging(tab){
+  if(shouldDiscardBeDisabled(tab)){
+    disableAutoDiscardForTab(tab.id);
+  }
+}
 
 function disableAutoDiscardForTab(tabId){
   chrome.tabs.update(tabId, {autoDiscardable: false});
 }
 
 function shouldDiscardBeDisabled(tab){
-  let subString = 'troy'
-  return isSubStringInDomain(tab,subString)
+  let doNotSuspends = ["troy", "music", "active"]
+  if(
+    doNotSuspends.filter(
+      entry => isSubStringInDomain(tab,entry)
+    ).length > 0){
+      return true
+  } else {
+      return false
+  }
 }
 
 function isSubStringInDomain(tab,subString){
