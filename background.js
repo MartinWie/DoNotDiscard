@@ -31,14 +31,19 @@ function disableAutoDiscardForTab(tabId){
 
 function shouldDiscardBeDisabled(tab){
   let doNotSuspends = ["troy", "music", "active"]
-  if(
-    doNotSuspends.filter(
+  
+  return isTabUrlInList(doNotSuspends,tab)
+}
+
+function isTabUrlInList(list,tab){
+  if(list.filter(
       entry => isSubStringInDomain(tab,entry)
     ).length > 0){
       return true
   } else {
       return false
   }
+
 }
 
 function isSubStringInDomain(tab,subString){
