@@ -1,6 +1,6 @@
-chrome.tabs.onCreated.addListener( tab =>
+chrome.tabs.onCreated.addListener(function(tab){
   discardManaging(tab)
-);
+});
 
 chrome.tabs.onReplaced.addListener(function(tabId) {
   let tab = chrome.tabs.get(tabId)
