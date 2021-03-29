@@ -11,5 +11,5 @@ The column "AutoDiscardable" should off for all tabs.
 
 
 ## TODOs: 
-- Add functionality to add a list of URL's to not beeing hybernated 
 - Add a proper Interface
+- TBD
