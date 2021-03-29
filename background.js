@@ -49,7 +49,6 @@ function isTabUrlInList(list,tab){
   } else {
       return false
   }
-
 }
 
 function isSubStringInDomain(tab,subString){
@@ -84,5 +83,4 @@ function updateAllTabs() {
       }
     });
   });
-  
 }
