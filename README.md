@@ -11,5 +11,5 @@ The column "AutoDiscardable" should off for all tabs.
 
 
 ## TODOs: 
-- Add a proper Interface
-- TBD
+- Add popup styling (popup.css)
+- Add a Input to add to the filter list
