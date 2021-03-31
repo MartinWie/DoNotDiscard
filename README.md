@@ -14,3 +14,4 @@ The column "AutoDiscardable" should off for all tabs.
 - Add popup styling (popup.css)
 - Add a Input to add to the filter list
 - add persistence to DoNotSuspends list
+- add button to open "chrome://discards"
