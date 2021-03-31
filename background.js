@@ -1,4 +1,4 @@
-let doNotSuspends = ["troy", "music", "active"]
+var doNotSuspends = ["troy", "music", "active"]
 
 chrome.tabs.onCreated.addListener(function(tab){
   discardManaging(tab)
