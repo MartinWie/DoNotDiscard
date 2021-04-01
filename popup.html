@@ -1,10 +1,16 @@
+<!DOCTYPE html>
+
 <html>
     <head>
         <link rel="stylesheet" href="popup.css">
     </head>
     <body>
+        <h3 class="heading">Manage keywords</h3>
         <div class="container">
-            <h3>Manage keywords to disable suspension for:</h3>
+            <input type="text" id="filterInput">
+            <button class="btn" id="filterButton">Add</button>
+        </div>
+        <div class="container">
             <ol id="filterList"></ol>
         </div>
         <script src="popup.js"></script>

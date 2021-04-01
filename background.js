@@ -1,4 +1,4 @@
-var doNotSuspends = ["troy", "music", "active"]
+var doNotSuspends
 
 chrome.tabs.onCreated.addListener(function(tab){
   discardManaging(tab)
@@ -14,12 +14,20 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 });
 
 chrome.runtime.onInstalled.addListener(function(details) {
+  doNotSuspends = ["troy", "music", "active"]
+  chrome.storage.sync.set({'doNotSuspends': doNotSuspends}, function() {});
   chrome.tabs.query({}, function(tabs) {
     tabs.forEach(function(tab) {
       discardManaging(tab)
     });
   });
 });
+
+chrome.runtime.onStartup.addListener(function() {
+  chrome.storage.local.get(['doNotSuspends'], function(result) {
+    doNotSuspends = result.doNotSuspends
+  });
+})
 
 function discardManaging(tab){
   if(shouldDiscardBeDisabled(tab)){
@@ -56,6 +64,7 @@ function isSubStringInDomain(tab,subString){
 }
 
 function addToDoNotSuspendList(entry) {
+  console.log(entry)
   doNotSuspends.push(entry)
   updateAllTabs()
 }
@@ -68,6 +77,7 @@ function removeFromDoNotSuspendList(entry) {
 }
 
 function updateAllTabs() {
+  chrome.storage.local.set({'doNotSuspends': doNotSuspends});
   chrome.tabs.query({}, function(tabs) {
     tabs.forEach(function(tab) {
       if(tab.url.indexOf("http") != -1){

@@ -22,4 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     filterEntr.forEach((entry) => {
         entry.addEventListener('click',remove)
     });
+
+
+    const filterButton = document.getElementById('filterButton');
+    const inputFire = () => {
+        background.addToDoNotSuspendList(document.getElementById('filterInput').value);
+        location.reload();
+    }
+    filterButton.addEventListener('click',inputFire)
 });
