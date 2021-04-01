@@ -1,6 +1,6 @@
 {
   "manifest_name": {
-    "message": "Disable automatic tab discarding for tabs"
+    "message": "DoNotDiscard"
   },
   "manifest_description": {
     "message": "Stops Chrome from suspending specific tabs, and reloading them when you switch to them."
