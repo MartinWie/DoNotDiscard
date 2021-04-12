@@ -14,6 +14,7 @@ The column "AutoDiscardable" should off for all tabs.
 
 
 ## TODOs: 
+- Add sync feature off chrome chrome.storage.sync.set and chrome.storage.sync.get for keywords
 - rewrite extension in V3
 - Add vote for extension option
 - Add good styling (popup.css)
