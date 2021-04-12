@@ -1,5 +1,9 @@
 ![DoNotSuspend logo](https://github.com/MartinWie/DoNotSuspend/blob/master/DoNotSuspend_logo.png)
 
+# Install
+[Chrome store](https://chrome.google.com/webstore/detail/piohlfbmepkepkoiacedlalbmbkjfphc)
+
+
 # Disable automatic tab discarding for specific domains
 Stops Chrome from suspending tabs, and reloading them when you switch to them for specific tabs.
 
