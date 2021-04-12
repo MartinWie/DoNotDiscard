@@ -9,6 +9,10 @@ Open "chrome://discards/"
 The column "AutoDiscardable" should off for all tabs.
 
 
-
 ## TODOs: 
+- rewrite extension in V3
+- Add vote for extension option
 - Add good styling (popup.css)
+    - Create better boxing around entries
+    - Move the remove button to the right side
+    - Wrap keywords into text fields(size visual limitation)
