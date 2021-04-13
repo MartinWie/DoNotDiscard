@@ -1,5 +1,8 @@
 ![DoNotSuspend logo](https://github.com/MartinWie/DoNotSuspend/blob/master/DoNotSuspend_logo.png)
 
+# [Discarded here is the new version](https://github.com/MartinWie/DoNotSuspend) 
+This plugin is now official discontinued, currently creating a new version [here](https://github.com/MartinWie/DoNotSuspend)
+
 # Install
 [Chrome store](https://chrome.google.com/webstore/detail/piohlfbmepkepkoiacedlalbmbkjfphc)
 
